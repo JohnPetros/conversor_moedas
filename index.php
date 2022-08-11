@@ -219,20 +219,21 @@ function convertBitcoin($value, $convertTo)
 
                 <input type="text"
                  class="currencyConverted"
-                readonly value="<?php  // VERIFICAR SE HOUVE RESULTADO
-                                    if (
-                                        isset($_POST['convertFrom']) &&
-                                        isset($_POST['convertTo']) &&
-                                        isset($result)) {
-                                    // DEFINIR VALOR COM 2 DECIMAIS
-                                    echo $symbol . number_format($result, 2,",",".");
-                                } elseif (
-                                        isset($_POST['convertFrom']) &&
-                                        isset($_POST['convertTo'])
-                                    ) {
-                                    // MOSTRAR MENSAGEM DE ERRO
-                                    echo $errorMessage;
-                                }  ?>">
+                readonly 
+                value="<?php  // VERIFICAR SE HOUVE RESULTADO
+                            if (
+                                isset($_POST['convertFrom']) &&
+                                isset($_POST['convertTo']) &&
+                                isset($result)) {
+                            // DEFINIR VALOR COM 2 CASA DECIMAIS
+                            echo $symbol . number_format($result, 2,",",".");
+                        } elseif (
+                                isset($_POST['convertFrom']) &&
+                                isset($_POST['convertTo'])
+                            ) {
+                            // MOSTRAR MENSAGEM DE ERRO
+                            echo $errorMessage;
+                        }  ?>">
             </div>
             <button class="convertButton">Converter</button>
         </form>
