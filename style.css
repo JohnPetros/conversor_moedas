@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #e3b462;
+  --secondary-color: #272727;
+  --tertiary-color: rgb(222, 222, 222);
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  outline: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://i.pinimg.com/originals/75/f5/a4/75f5a4bf815ae6c8f9d79da0e3655594.gif");
+  background-size: cover;
+}
+
+header {
+  color: var(--secondary-color);
+  max-width: 350px;
+  text-align: center;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .title {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+header .coin {
+  width: 10%;
+  background-image: url(https://art.pixilart.com/fd671e1adc7c9ed.png);
+  background-position: center center;
+  background-size: cover;
+  animation: 0.5s rotation infinite ease-in-out;
+}
+
+.container {
+  background-color: var(--secondary-color);
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.263);
+}
+
+.container .convertor {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 45px;
+}
+
+.container .convertor .convert {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.container .convertor p {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.container .convertor .currencySelection {
+  font-size: 1.2rem;
+  height: 40px;
+  max-width: 80px;
+  color: rgb(35, 35, 35);
+}
+
+.container .convertor .value {
+  width: 40%;
+  height: 40px;
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.container .convertor .currencyConverted {
+  color: var(--primary-color);
+  background-color: inherit;
+  border: none;
+  height: 40px;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  z-index: 5;
+}
+
+.container .convertButton {
+  height: 45px;
+  font-size: 1.7rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.container .convertButton:hover {
+  background-color: var(--primary-color);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes floating {
+  0% {
+    bottom: 40px;
+  }
+  50% {
+    bottom: 50px;
+  }
+  100% {
+    bottom: 40px;
+  }
+}
+
+
+@media (max-width: 430px) {
+    .container {
+        width: 350px;
+        font-size: 1.1rem;
+    }
+    .container .convertor .currencyConverted {
+        font-size: 1.3rem;
+    }
+}
