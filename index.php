@@ -187,10 +187,10 @@ function convertYen($value, $convertTo)
             <p>para:</p>
             <div class="convert">
                 <select name="convertTo" class="currencySelection" id="">
-                    <option <?php if (isset($_POST['convertFrom']) && $_POST['convertTo'] == 'dolar') echo 'selected'; ?> value="dolar">USD</option>
-                    <option <?php if (isset($_POST['convertFrom']) && $_POST['convertTo'] == 'real') echo 'selected'; ?> value="real">BRL</option>
-                    <option <?php if (isset($_POST['convertFrom']) && $_POST['convertTo'] == 'euro') echo 'selected'; ?> value="euro">EUR</option>
-                    <option <?php if (isset($_POST['convertFrom']) && $_POST['convertTo'] == 'yen') echo 'selected'; ?> value="yen">JPY</option>
+                    <option <?php if (isset($_POST['convertTo']) && $_POST['convertTo'] == 'dolar') echo 'selected'; ?> value="dolar">USD</option>
+                    <option <?php if (isset($_POST['convertTo']) && $_POST['convertTo'] == 'real') echo 'selected'; ?> value="real">BRL</option>
+                    <option <?php if (isset($_POST['convertTo']) && $_POST['convertTo'] == 'euro') echo 'selected'; ?> value="euro">EUR</option>
+                    <option <?php if (isset($_POST['convertTo']) && $_POST['convertTo'] == 'yen') echo 'selected'; ?> value="yen">JPY</option>
                 </select>
 
                 <input type="text"
