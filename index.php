@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// VALIDAR VALOR RECEBIDO
 function validateValue($value)
 {
     global $errorMessage;
@@ -148,31 +149,6 @@ function convertYen($value, $convertTo)
     }
 }
 
-function convertBitcoin($value, $convertTo)
-{
-    global $result, $symbol;
-    switch ($convertTo) {
-        case "dolar":
-            $result = $value * 23162.90;
-            $symbol = "$";
-            break;
-        case "real":
-            $result = $value * 119619.31;
-            $symbol = "R$";
-            break;
-        case "euro":
-            $result = $value * 22752.80;
-            $symbol = "€";
-            break;
-        case "yen":
-            $result = $value * 3126759.87;
-            $symbol = "¥";
-            break;
-        case "bitcoin":
-            $result = $value;
-            $symbol = "₿";
-    }
-}
 
 ?>
 
@@ -220,19 +196,20 @@ function convertBitcoin($value, $convertTo)
                 <input type="text"
                  class="currencyConverted"
                 readonly 
-                value="<?php  // VERIFICAR SE HOUVE RESULTADO
+                value="<?php  // VERIFICAR SE HOUVE RESULTADO NA CONVERSÃO
                             if (
                                 isset($_POST['convertFrom']) &&
                                 isset($_POST['convertTo']) &&
-                                isset($result)) {
-                            // DEFINIR VALOR COM 2 CASA DECIMAIS
-                            echo $symbol . number_format($result, 2,",",".");
+                                isset($result)
+                                ) {
+                                // DEFINIR VALOR COM 2 CASA DECIMAIS
+                                echo $symbol . number_format($result, 2,",",".");
                         } elseif (
                                 isset($_POST['convertFrom']) &&
                                 isset($_POST['convertTo'])
-                            ) {
-                            // MOSTRAR MENSAGEM DE ERRO
-                            echo $errorMessage;
+                                ) {
+                                // MOSTRAR MENSAGEM DE ERRO
+                                echo $errorMessage;
                         }  ?>">
             </div>
             <button class="convertButton">Converter</button>
